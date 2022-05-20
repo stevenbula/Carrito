@@ -1,0 +1,248 @@
+:root {
+  --navbar-height: 60px;
+  --text-size: 16px;
+  --icons-size: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    --text-size: 18px;
+    --icons-size: 20px;
+  }
+}
+
+html {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body{
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.navbar {
+  background-color: rgb(1, 1, 117);
+  height: var(--navbar-height);
+
+}
+
+.navbar__logo {
+  padding-left: 15px;
+}
+
+.navbar__container {
+  background-color: rgb(1, 1, 117);
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(29, 29, 29);
+  text-decoration: none;
+}
+
+.navbar__logo-text {
+  font-size: var(--text-size);
+  color: white;
+}
+
+.navbar__logo-icon {
+  font-size: var(--icons-size);
+}
+
+.navbar__list {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.about__title, .about__text, .wrapper__title, .wrapper__sidebar-cart-title,
+.cart__item-text,  .cart__item-title, .cart__item-btn-text, .wrapper__sidebar-cart-total{
+color: white;
+}
+.navbar__link {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+/* Hasta */
+@media screen and (max-width: 768px) {
+  .navbar__nav {
+    position: absolute;
+    top: var(--navbar-height);
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .3s ease-in-out;
+  }
+
+  .navbar__list {
+    background-color: black;
+    flex-direction: column;
+    opacity: 0;
+    height: 0;
+    transition: all .2s ease-in-out;
+  }
+}
+
+.navbar__nav.active {
+  background-color: black;
+  padding: 20px 0;
+  height: auto;
+}
+
+.navbar__nav.active .navbar__list {
+  opacity: 1;
+  height: auto;
+}
+
+.navbar__btn {
+  padding-right: 15px;
+}
+
+.navbar__btn-link {
+  background-color: rgb(30, 23, 61);
+  border: none;
+  outline: none;
+  color: #333;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  background-image: url('https://restauracionnews.com/wp-content/uploads/2020/10/2.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+}
+
+.about__container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.about__content {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.295);
+  padding: 8px;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+.wrapper__container {
+  padding: 20px;
+  border: 1px solid rgb(0, 17, 255);
+}
+.wrapper__product-btn-item {
+   color: blue;
+
+
+}
+.wrapper__product-btn-item:hover {
+  color: red;
+}
+.wrapper__product-title{
+  color: blue;
+}
+.wrapper__products {
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.botonllamada{
+  background-color: blue;
+  color: #fff;
+border: none;
+border-radius: 15px 50px;
+padding: 10px;
+}
+.botonllamada:hover{
+  background-color: rgb(0, 0, 141);
+}
+
+.wrapper__sidebar {
+  padding: 20px;
+  border: 1px solid rgb(17, 0, 255);
+}
+
+.footer {
+  background-color: rgb(1, 1, 117);
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* Desde */
+
+@media screen and (min-width: 500px) {
+  .about__content {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    flex-direction: row;
+  }
+
+  .wrapper__container {
+    width: 70%;
+  }
+
+  .wrapper__sidebar {
+    width: 30%;
+  }
+
+  .navbar__btn-link {
+    visibility: hidden;
+  }
+
+  .about__content {
+    width: 35%;
+  }
+}
